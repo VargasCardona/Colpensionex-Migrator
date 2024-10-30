@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ejercicioingenieria;
+package models;
 
-/**
- *
- * @author nicolasolayarincon
- */
 public class Ciudad {
     private int idCiudad;
     private String nombre;
     private int poblacion;
 
+    //Constructor sin parametros para Reflection
+    public Ciudad() {}
+    
     public Ciudad(int idCiudad, String nombre, int poblacion) {
         this.idCiudad = idCiudad;
         this.nombre = nombre;

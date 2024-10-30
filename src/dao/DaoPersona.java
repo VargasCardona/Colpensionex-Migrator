@@ -1,16 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
 
-import ejercicioingenieria.Persona;
-import java.util.List;
+import models.Persona;
 
-/**
- *
- * @author nicolasolayarincon
- */
 public class DaoPersona extends DaoGenerico<Persona>  {
 
     public DaoPersona(String ruta) {
@@ -18,7 +9,7 @@ public class DaoPersona extends DaoGenerico<Persona>  {
     }
 
     @Override
-    public List<Persona> getAll() {
-        return entityManager.cargarDesdeCSV(ruta, Persona.class);
+    protected Class<Persona> getEntityClass() {
+        return Persona.class;
     }
 }

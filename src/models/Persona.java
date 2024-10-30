@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package ejercicioingenieria;
+package models;
 
-/**
- *
- * @author nicolasolayarincon
- */
 public class Persona {
     private int idPersona;
     private String cedula;
     private String nombre;
 
+    //Constructor sin parametros para Reflection
+    public Persona() {}
+    
     public Persona(int idPersona, String cedula, String nombre) {
         this.idPersona = idPersona;
         this.cedula = cedula;

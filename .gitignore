@@ -1,0 +1,48 @@
+# Directorios de NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Archivos y directorios de compilación
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Directorios específicos de Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Archivos generados por el IDE
+*.iml
+*.ipr
+*.iws
+*.swp
+
+# Configuración específica de NetBeans en módulos Maven
+**/nb-configuration.xml
+
+# Configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de log
+*.log
+
+# Archivos de IntelliJ y Eclipse (por si se usa algún otro IDE ocasionalmente)
+.idea/
+*.project
+*.classpath
+
