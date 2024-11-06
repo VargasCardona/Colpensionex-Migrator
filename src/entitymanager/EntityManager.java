@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.Field;
+import java.time.LocalDate;
 
 public class EntityManager {
 
@@ -58,12 +59,17 @@ public class EntityManager {
                 // Asignar valor en función del tipo de campo
                 if (i < valores.length) {
                     String valor = valores[i];
-                    if (campo.getType() == int.class) {
+                    if (campo.getType() == boolean.class) {
+                        campo.setBoolean(i, Boolean.parseBoolean(valor));
+                    } else if (campo.getType() == int.class) {
                         campo.setInt(entidad, Integer.parseInt(valor));
+                    } else if (campo.getType() == double.class) {
+                        campo.setDouble(entidad, Double.parseDouble(valor));
                     } else if (campo.getType() == String.class) {
                         campo.set(entidad, valor);
+                    } else if (campo.getType() == LocalDate.class) {
+                        campo.set(entidad, LocalDate.parse(valor));
                     }
-                    // Agrega más tipos según lo necesites
                 }
             }
             return entidad;
