@@ -1,13 +1,15 @@
 # Colpensionex Retirement Migrator
 
-## Project Overview
+![Repo Size](https://img.shields.io/github/repo-size/VargasCardona/Colpensionex-Migrator )
+![GitHub License](https://img.shields.io/github/license/VargasCardona/Colpensionex-Migrator )
+![GitHub last commit](https://img.shields.io/github/last-commit/VargasCardona/Colpensionex-Migrator )
+
 This project automates the transfer of contributors from private pension funds to the public pension fund, Colpensionex. Developed by EamSoft for Colpensionex, this tool streamlines the transfer process to improve service quality and reduce manual labor.
 
 ## Table of Contents
 - [Background](#background)
 - [Features](#features)
 - [Technical Details](#technical-details)
-- [Project Structure](#project-structure)
 - [Setup and Usage](#setup-and-usage)
 - [Contributors](#contributors)
 - [License](#license)
@@ -48,6 +50,7 @@ java -cp bin MainClassName
 - **Nicolás Vargas Cardona** - [GitHub Profile](https://github.com/VargasCardona)
 - **Mateo Loaiza García** - [GitHub Profile](https://github.com/Matthub05)
 - **Camilo Duarte Rivera** - [GitHub Profile](https://github.com/DuarteCamilo)
+- **Nicolás Olaya Rincón** - [GitHub Profile](https://github.com/)
 
 ## License
 This project is licensed under the [GNU General public license](https://www.gnu.org/licenses/) - see the LICENSE file for details.
