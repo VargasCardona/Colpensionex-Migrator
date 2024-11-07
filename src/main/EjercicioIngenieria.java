@@ -2,6 +2,7 @@ package main;
 
 import dao.DaoCiudad;
 import dao.DaoPersona;
+import entitymanager.EntityManager;
 import java.util.List;
 import models.Ciudad;
 import models.Persona;
@@ -27,7 +28,13 @@ public class EjercicioIngenieria {
         ciudades.forEach(ciudad ->
                 System.out.println(ciudad.getNombre() + " " + ciudad.getPoblacion())
         );
-
+        try{
+            EntityManager em = new EntityManager();
+            em.createCSV();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+           
     }
 
 }

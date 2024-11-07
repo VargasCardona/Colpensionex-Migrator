@@ -1,7 +1,9 @@
 package entitymanager;
 
+import com.opencsv.CSVWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,5 +79,19 @@ public class EntityManager {
             e.printStackTrace();
             return null;
         }
+    }
+    
+     public void createCSV() throws IOException{
+        
+        String [] pais = {"Spain", "ES", "ESP", "724", "Yes"};
+
+        String archCSV = "prueba.csv";
+        CSVWriter writer = new CSVWriter(new FileWriter(archCSV));
+
+        writer.writeNext(pais);
+
+        writer.close();
+        
+        
     }
 }
