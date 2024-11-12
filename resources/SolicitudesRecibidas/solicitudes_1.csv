@@ -1,0 +1,4 @@
+idSolicitud,idCotizante,fechaCreacion,fechaUltimaActualizacion,estado
+1,COT123,2024-01-15,2024-02-01,En Proceso
+2,COT456,2024-03-22,2024-03-23,Finalizado
+3,COT789,2024-05-10,2024-05-12,Cancelado

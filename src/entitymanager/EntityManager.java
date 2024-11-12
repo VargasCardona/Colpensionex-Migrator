@@ -49,7 +49,7 @@ public class EntityManager {
      * @param tipoEntidad
      * @return entidad con los valores del csv
      */
-    private <T> T crearEntidadConValores(String[] valores, Class<T> tipoEntidad) {
+    public <T> T crearEntidadConValores(String[] valores, Class<T> tipoEntidad) {
         try {
             T entidad = tipoEntidad.getDeclaredConstructor().newInstance();
             Field[] campos = tipoEntidad.getDeclaredFields();
