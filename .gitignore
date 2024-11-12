@@ -9,7 +9,7 @@ nb-configuration.xml
 
 # Archivos y directorios de compilación
 *.class
-*.jar
+#*.jar
 *.war
 *.nar
 *.ear
