@@ -80,7 +80,7 @@ public class EntityManager {
         }
     }
     
-     public <T> void createCSV(String ruta, List<String> cabecera, List<List<String>> lista) throws IOException{
+     public void createCSV(String ruta, List<String> cabecera, List<List<String>> lista) throws IOException{
         List<List<String>> datos = new ArrayList<>();
         datos.add(cabecera);
         datos.addAll(lista);
