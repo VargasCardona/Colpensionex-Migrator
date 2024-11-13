@@ -1,4 +1,51 @@
-idSolicitud,idCotizante,fechaCreacion,fechaUltimaActualizacion,estado
-1,COT123,2024-01-15,2024-02-01,En Proceso
-2,COT456,2024-03-22,2024-03-23,Finalizado
-3,COT789,2024-05-10,2024-05-12,Cancelado
+idSolicitud,idCotizante,fechaCreacion,fechaUltimaActualizacion,estado,nombre,fondoOrigen,fondoDestino,sexo,fechaNacimiento,ciudadNacimiento,ciudadResidencia,institucionPublica,prePensionado,condecoracion,numHijos,verificadoPorProcuraduria,verificadoPorFiscalia,verificadoPorContraloria,enListaNegra,fechaIngresoListaNegra,observacionDisciplinaria,tieneFamiliaEnPoliciasemanasCotizadas
+1,COT001,2024-01-10,2024-01-20,En Proceso,Juan Pérez,Porvenir,Protección,Masculino,1965-05-01,Bogotá,Medellín,Policía,True,False,2,True,True,False,False,,No tiene,1100
+2,COT002,2024-02-11,2024-02-20,En Proceso,Ana Gómez,Old Mutual,Protección,Femenino,1978-11-12,Medellín,Bogotá,Minsalud,False,True,0,False,True,True,True,2020-05-10,No tiene,950
+3,COT003,2024-03-15,2024-03-18,En Proceso,Luis Rodríguez,Colfondos,Porvenir,Masculino,1980-07-30,Bogotá,Cali,Inpec,False,False,1,True,True,True,False,,No tiene,1200
+4,COT004,2024-04-10,2024-04-12,En Proceso,María López,Protección,Old Mutual,Femenino,1972-04-14,Medellín,Cartagena,Mininterior,True,True,3,False,False,True,False,,No tiene,800
+5,COT005,2024-05-20,2024-06-01,En Proceso,Pedro Martínez,none,Protección,Masculino,1969-10-20,Bucaramanga,Bogotá,none,True,False,4,True,True,False,True,2021-07-20,No tiene,1150
+6,COT006,2024-06-14,2024-06-15,En Proceso,Lucía Ramírez,Porvenir,Old Mutual,Femenino,1982-02-15,Cartagena,Medellín,Armada,False,True,2,False,True,True,False,,No tiene,1300
+7,COT007,2024-07-22,2024-07-23,En Proceso,Carlos Ruiz,none,Colfondos,Masculino,1975-12-18,Bogotá,Cali,Minsalud,True,False,1,True,False,False,False,,No tiene,700
+8,COT008,2024-08-10,2024-08-20,En Proceso,Sandra Díaz,Protección,Porvenir,Femenino,1985-09-11,Medellín,Bogotá,Inpec,True,True,3,False,False,True,True,2019-03-12,No tiene,1050
+9,COT009,2024-09-30,2024-10-02,En Proceso,Jorge Torres,Old Mutual,Protección,Masculino,1977-06-07,Bogotá,Cartagena,Mininterior,False,True,2,True,True,True,False,,No tiene,890
+10,COT010,2024-10-15,2024-10-25,En Proceso,Carolina Vega,Porvenir,none,Femenino,1964-01-29,Cali,Medellín,none,True,False,1,True,True,False,True,2022-10-30,No tiene,960
+11,COT011,2024-11-01,2024-11-02,En Proceso,Andrea Morales,Colfondos,Protección,Femenino,1970-08-05,Medellín,Bogotá,Armada,False,True,3,False,False,True,False,,No tiene,1175
+12,COT012,2024-12-13,2024-12-14,En Proceso,Fernando Ortiz,none,Colfondos,Masculino,1981-04-17,Bucaramanga,Cali,Policía,True,False,4,True,True,True,True,2020-04-05,Mayor,800
+13,COT013,2025-01-05,2025-01-15,En Proceso,Paola Castillo,Protección,Old Mutual,Femenino,1973-02-23,Bogotá,Medellín,Minsalud,False,True,2,False,True,False,False,,No tiene,1100
+14,COT014,2025-02-25,2025-03-01,En Proceso,Ricardo Mendoza,Porvenir,none,Masculino,1979-05-13,Medellín,Bogotá,Inpec,True,False,1,True,False,True,True,2021-08-08,No tiene,900
+15,COT015,2025-03-22,2025-03-23,En Proceso,Sofía Ramírez,Old Mutual,Porvenir,Femenino,1968-11-28,Bogotá,Cali,Mininterior,True,True,0,True,True,True,False,,No tiene,1250
+16,COT016,2025-04-10,2025-04-20,En Proceso,Andrés Guerra,none,Protección,Masculino,1983-03-15,Barranquilla,Cartagena,none,False,True,2,False,False,True,True,2022-03-16,No tiene,970
+17,COT017,2025-05-12,2025-05-13,En Proceso,Natalia Benítez,Protección,Old Mutual,Femenino,1976-09-25,Cali,Bogotá,Armada,True,False,3,True,False,False,False,,No tiene,1050
+18,COT018,2025-06-08,2025-06-10,En Proceso,Raúl Cabrera,Porvenir,Colfondos,Masculino,1965-04-19,Medellín,Medellín,Policía,False,True,1,False,True,True,True,2018-11-12,Menor,700
+19,COT019,2025-07-18,2025-07-19,En Proceso,Laura Torres,Old Mutual,Protección,Femenino,1988-10-31,Cartagena,Bogotá,Minsalud,True,False,4,True,True,False,False,,No tiene,950
+20,COT020,2025-08-25,2025-09-01,En Proceso,Gabriel Rivas,Colfondos,none,Masculino,1972-08-11,Bogotá,Cali,Inpec,False,True,2,False,False,True,True,2019-05-21,No tiene,1100
+21,COT021,2025-09-15,2025-09-16,En Proceso,Elena García,Porvenir,Colfondos,Femenino,1984-04-22,Medellín,Bogotá,Inpec,False,True,2,True,False,True,False,,No tiene,1025
+22,COT022,2025-10-10,2025-10-12,En Proceso,Javier Torres,Colfondos,Porvenir,Masculino,1978-12-04,Bogotá,Cali,Policía,True,False,3,True,True,True,True,2022-08-15,Mayor,950
+23,COT023,2025-11-20,2025-11-22,En Proceso,Sofía Rodríguez,Old Mutual,none,Femenino,1990-09-05,Medellín,Bogotá,none,False,True,1,True,False,True,False,,No tiene,980
+24,COT024,2025-12-11,2025-12-12,En Proceso,Roberto Castro,Protección,Colfondos,Masculino,1980-03-27,Cali,Medellín,Policía,False,True,4,False,True,False,True,2023-01-01,Menor,1100
+25,COT025,2026-01-05,2026-01-07,En Proceso,Marta Gómez,none,Porvenir,Femenino,1971-02-14,Medellín,Cartagena,none,True,False,2,True,True,False,False,,No tiene,960
+26,COT026,2026-02-25,2026-02-28,En Proceso,Adrián Pérez,Colfondos,Old Mutual,Masculino,1985-05-10,Bogotá,Medellín,none,False,True,1,True,False,True,False,,No tiene,1030
+27,COT027,2026-03-30,2026-03-31,En Proceso,Patricia Hernández,Old Mutual,Porvenir,Femenino,1976-08-18,Bogotá,Cali,Inpec,True,False,3,True,True,True,False,,No tiene,1200
+28,COT028,2026-04-05,2026-04-07,En Proceso,Manuel Sánchez,Protección,none,Masculino,1982-06-25,Bogotá,Medellín,Policía,False,True,2,True,False,True,True,2021-10-11,Menor,1050
+29,COT029,2026-05-12,2026-05-14,En Proceso,Ana Herrera,none,Porvenir,Femenino,1974-07-20,Cali,Bogotá,none,True,True,3,False,True,True,False,,No tiene,1100
+30,COT030,2026-06-02,2026-06-03,En Proceso,Ricardo Fernández,Colfondos,none,Masculino,1988-04-09,Medellín,Cali,Minsalud,False,True,1,False,True,True,True,2023-06-01,No tiene,940
+31,COT031,2026-07-15,2026-07-16,En Proceso,Laura Castillo,Porvenir,Colfondos,Femenino,1981-11-13,Cartagena,Medellín,Policía,False,True,4,True,True,False,True,2024-02-28,Mayor,1250
+32,COT032,2026-08-22,2026-08-23,En Proceso,Francisco Martínez,none,Old Mutual,Masculino,1977-01-05,Bogotá,Cali,none,True,False,2,True,True,False,False,,No tiene,1030
+33,COT033,2026-09-09,2026-09-11,En Proceso,Alejandra Ruiz,Porvenir,none,Femenino,1995-02-16,Medellín,Cali,none,False,True,0,False,True,True,False,,No tiene,980
+34,COT034,2026-10-03,2026-10-05,En Proceso,Julian Martínez,Old Mutual,Colfondos,Masculino,1983-11-10,Medellín,Bogotá,Policía,True,False,1,True,False,True,True,2020-11-30,Menor,1075
+35,COT035,2026-11-21,2026-11-23,En Proceso,Claudia Rodríguez,none,Porvenir,Femenino,1982-09-30,Bogotá,Medellín,none,False,True,3,True,True,False,False,,No tiene,1120
+36,COT036,2026-12-17,2026-12-18,En Proceso,José Ramírez,Porvenir,none,Masculino,1971-07-22,Bogotá,Cali,Policía,False,False,4,True,True,True,False,,Menor,990
+37,COT037,2027-01-08,2027-01-10,En Proceso,Natalia García,Colfondos,Old Mutual,Femenino,1986-12-02,Cartagena,Bogotá,none,False,True,2,True,False,True,False,,No tiene,950
+38,COT038,2027-02-01,2027-02-02,En Proceso,Miguel Ángel Pérez,none,Protección,Masculino,1975-03-05,Bogotá,Medellín,Inpec,True,True,3,False,False,True,False,,No tiene,920
+39,COT039,2027-03-15,2027-03-17,En Proceso,Valeria Jiménez,Old Mutual,none,Femenino,1992-01-14,Cali,Bogotá,Policía,False,True,1,True,True,True,True,2022-07-08,Mayor,1115
+40,COT040,2027-04-01,2027-04-03,En Proceso,Esteban Gómez,Porvenir,Colfondos,Masculino,1979-05-26,Medellín,Cali,none,True,False,2,True,False,False,False,,No tiene,1000
+41,COT041,2027-05-10,2027-05-12,En Proceso,Carolina Mendoza,Colfondos,Porvenir,Femenino,1983-08-18,Cali,Bogotá,none,False,True,2,True,False,True,False,,No tiene,940
+42,COT042,2027-06-20,2027-06-22,En Proceso,Jorge Silva,Old Mutual,none,Masculino,1990-12-15,Bogotá,Medellín,none,True,False,3,False,True,False,False,,No tiene,980
+43,COT043,2027-07-10,2027-07-12,En Proceso,Lucía Vargas,Porvenir,Colfondos,Femenino,1981-04-07,Medellín,Cali,Policía,False,True,4,True,False,True,True,2022-02-01,Menor,1120
+44,COT044,2027-08-08,2027-08-10,En Proceso,Daniel Martínez,none,Porvenir,Masculino,1987-09-19,Cartagena,Bogotá,none,False,True,2,True,True,False,False,,No tiene,1050
+45,COT045,2027-09-14,2027-09-16,En Proceso,Esther Rodríguez,Old Mutual,none,Femenino,1989-06-12,Medellín,Cali,none,False,True,3,True,False,True,True,2024-01-15,No tiene,1000
+46,COT046,2027-10-10,2027-10-12,En Proceso,Raúl Martínez,Protección,none,Masculino,1982-02-25,Cali,Medellín,none,True,False,1,False,True,True,False,,No tiene,1100
+47,COT047,2027-11-05,2027-11-07,En Proceso,Claudia Ramírez,Colfondos,Old Mutual,Femenino,1993-11-09,Medellín,Bogotá,none,False,True,0,True,False,True,False,,No tiene,1055
+48,COT048,2027-12-11,2027-12-13,En Proceso,Diego Romero,none,Colfondos,Masculino,1980-05-05,Cali,Bogotá,Policía,False,True,3,True,False,True,True,2023-08-19,Menor,1070
+49,COT049,2028-01-15,2028-01-17,En Proceso,Andrea Díaz,Porvenir,none,Femenino,1985-07-03,Bogotá,Medellín,none,True,False,2,True,True,False,False,,No tiene,990
+50,COT050,2028-02-07,2028-02-09,En Proceso,Juan Gómez,Colfondos,none,Masculino,1984-10-23,Cali,Medellín,Inpec,False,True,1,True,False,True,False,,Mayor,1045
