@@ -1,6 +1,5 @@
 package entitymanager;
 
-import com.opencsv.CSVWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -81,16 +80,21 @@ public class EntityManager {
         }
     }
     
-     public void createCSV() throws IOException{
-        
-        String [] pais = {"Spain", "ES", "ESP", "724", "Yes"};
+     public <T> void createCSV(String ruta, List<String> cabecera, List<List<String>> lista) throws IOException{
+        List<List<String>> datos = new ArrayList<>();
+        datos.add(cabecera);
+        datos.addAll(lista);
 
-        String archCSV = "prueba.csv";
-        CSVWriter writer = new CSVWriter(new FileWriter(archCSV));
-
-        writer.writeNext(pais);
-
-        writer.close();
+        try (FileWriter writer = new FileWriter(ruta)) {
+            for (List<String> fila : datos) {
+                // Escribir cada fila en el archivo
+                writer.append(String.join(",", fila));
+                writer.append("\n"); // Salto de línea para cada fila
+            }
+            System.out.println("Archivo CSV creado con éxito.");
+        } catch (IOException e) {
+            System.err.println("Error al crear el archivo CSV: " + e.getMessage());
+        }
         
         
     }

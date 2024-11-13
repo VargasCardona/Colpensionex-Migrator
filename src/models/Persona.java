@@ -1,5 +1,8 @@
 package models;
 
+import java.util.List;
+import java.util.Arrays;
+
 public class Persona {
     private int idPersona;
     private String cedula;
@@ -45,5 +48,13 @@ public class Persona {
                 ", cedula='" + cedula + '\'' +
                 ", nombre='" + nombre + '\'' +
                 '}';
+    }
+    
+    public List<String> toStringList() {
+        return Arrays.asList(String.valueOf(idPersona), cedula, nombre);
+    }
+
+    public List<String> getCabecera() {
+        return Arrays.asList("idPersona", "cedula", "nombre");
     }
 }
