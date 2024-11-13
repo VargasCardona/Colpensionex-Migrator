@@ -60,10 +60,11 @@ public class EntityManager {
                 // Asignar valor en función del tipo de campo
                 if (i < valores.length) {
                     String valor = valores[i];
-                    if (campo.getType() == boolean.class) {
-                        campo.setBoolean(i, Boolean.parseBoolean(valor));
-                    } else if (campo.getType() == int.class) {
+                    if (campo.getType() == int.class) {
                         campo.setInt(entidad, Integer.parseInt(valor));
+                    } else if (campo.getType() == boolean.class) {
+                        System.out.println(valor);
+                        campo.setBoolean(entidad, valor.equals("true"));
                     } else if (campo.getType() == double.class) {
                         campo.setDouble(entidad, Double.parseDouble(valor));
                     } else if (campo.getType() == String.class) {
