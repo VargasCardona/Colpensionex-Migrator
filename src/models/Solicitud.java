@@ -14,7 +14,7 @@ public class Solicitud {
     private String nombre;
     private String fondoOrigen;
     private String fondoDestino;
-    private boolean embargoPensiones;
+    private boolean sexo;
     private LocalDate fechaNacimiento;
     private String ciudadNacimiento;
     private String ciudadResidencia;
@@ -30,6 +30,7 @@ public class Solicitud {
     private boolean enListaNegra;
     private LocalDate fechaIngresoListaNegra;
     private boolean observacionDisciplinaria;
+    private String tieneFamiliaEnPolicia;
     private int semanasCotizadas;
 
     // Constructor sin parámetros para Reflection
@@ -37,12 +38,12 @@ public class Solicitud {
 
     // Constructor con parámetros
     public Solicitud(int idSolicitud, String idCotizante, LocalDate fechaCreacion, String estado, String nombre, 
-                    String fondoOrigen, String fondoDestino, boolean embargoPensiones, 
+                    String fondoOrigen, String fondoDestino, boolean sexo, 
                     LocalDate fechaNacimiento, boolean verificadoPorProcuraduria, boolean verificadoPorFiscalia, 
                     boolean verificadoPorContraloria,String ciudadNacimiento, String ciudadResidencia,
                     String institucionPublica, boolean prePensionado, boolean condecoracion, int numHijos,
                     boolean enListaNegra, LocalDate fechaIngresoListaNegra, boolean observacionDisciplinaria,
-                    int semanasCotizadas) {
+                    String tieneFamiliaEnPolicia,int semanasCotizadas) {
         this.idSolicitud = idSolicitud;
         this.fechaCreacion = fechaCreacion;
         this.fechaUltimaActualizacion = fechaCreacion; 
@@ -51,7 +52,7 @@ public class Solicitud {
         this.nombre = nombre;
         this.fondoOrigen = fondoOrigen;
         this.fondoDestino = fondoDestino;
-        this.embargoPensiones = embargoPensiones;
+        this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
         this.verificadoPorProcuraduria = verificadoPorProcuraduria;
         this.verificadoPorFiscalia = verificadoPorFiscalia;
@@ -65,6 +66,7 @@ public class Solicitud {
         this.enListaNegra = enListaNegra;
         this.fechaIngresoListaNegra = fechaIngresoListaNegra;
         this.observacionDisciplinaria = observacionDisciplinaria;
+        this.tieneFamiliaEnPolicia = tieneFamiliaEnPolicia;
         this.semanasCotizadas = semanasCotizadas;
     }
 
@@ -132,14 +134,7 @@ public class Solicitud {
     public void setFondoDestino(String fondoDestino) {
         this.fondoDestino = fondoDestino;
     }
-
-    public boolean isEmbargoPensiones() {
-        return embargoPensiones;
-    }
-
-    public void setEmbargoPensiones(boolean embargoPensiones) {
-        this.embargoPensiones = embargoPensiones;
-    }
+    
 
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
@@ -252,8 +247,23 @@ public class Solicitud {
     public void setSemanasCotizadas(int semanasCotizadas) {
         this.semanasCotizadas = semanasCotizadas;
     }
+    
+    public boolean getSexo() {
+        return sexo;
+    }
 
+    public void setSexo(boolean sexo) {
+        this.sexo = sexo;
+    }
 
+    public String isTieneFamiliaEnPolicia() {
+        return tieneFamiliaEnPolicia;
+    }
+
+    public void setTieneFamiliaEnPolicia(String tieneFamiliaEnPolicia) {
+        this.tieneFamiliaEnPolicia = tieneFamiliaEnPolicia;
+    }
+    
 
     public int calcularEdad() {
         return LocalDate.now().getYear() - this.fechaNacimiento.getYear();
@@ -269,7 +279,7 @@ public class Solicitud {
                 ", nombre='" + nombre + '\'' +
                 ", fondoOrigen='" + fondoOrigen + '\'' +
                 ", fondoDestino='" + fondoDestino + '\'' +
-                ", embargoPensiones=" + embargoPensiones +
+                ", sexo=" + sexo +
                 ", fechaNacimiento=" + fechaNacimiento +
                 ", ciudadNacimiento='" + ciudadNacimiento + '\'' +
                 ", ciudadResidencia='" + ciudadResidencia + '\'' +
@@ -283,6 +293,7 @@ public class Solicitud {
                 ", enListaNegra=" + enListaNegra +
                 ", fechaIngresoListaNegra=" + fechaIngresoListaNegra +
                 ", observacionDisciplinaria=" + observacionDisciplinaria +
+                ", tieneFamiliaEnPolicia=" + tieneFamiliaEnPolicia +
                 ", semanasCotizadas=" + semanasCotizadas +
                 '}';
     }
