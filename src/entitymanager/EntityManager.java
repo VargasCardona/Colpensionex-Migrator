@@ -69,7 +69,8 @@ public class EntityManager {
                     } else if (campo.getType() == String.class) {
                         campo.set(entidad, valor);
                     } else if (campo.getType() == LocalDate.class) {
-                        campo.set(entidad, LocalDate.parse(valor));
+                        Object value = (valor.equals("null") || valor.equals("")) ? null : LocalDate.parse(valor);
+                        campo.set(entidad, value);
                     }
                 }
             }
@@ -91,7 +92,7 @@ public class EntityManager {
                 writer.append(String.join(",", fila));
                 writer.append("\n"); // Salto de línea para cada fila
             }
-            System.out.println("Archivo CSV creado con éxito.");
+            System.out.println("Archivo CSV '" + ruta + "' creado con éxito.");
         } catch (IOException e) {
             System.err.println("Error al crear el archivo CSV: " + e.getMessage());
         }
