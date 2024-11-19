@@ -8,7 +8,9 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -29,6 +31,8 @@ public class ProcesadorCsv {
     }
 
     public void processSingleCsvFile(Path csvFile) {
+        
+        
 
         List<String> cabecera = Arrays.asList(
                 "idSolicitud",
@@ -58,13 +62,26 @@ public class ProcesadorCsv {
         );
         
         List<Solicitud> listaSolicitudes = em.cargarDesdeCSV(csvFile.toString(), Solicitud.class);
-        List<Solicitud> listaSolicitudesRechazadas = em.cargarDesdeCSV(csvFile.toString(), Solicitud.class);
+        
+        List<Solicitud> listaSolicitudesEmbargo = em.cargarDesdeCSV(csvFile.toString(), Solicitud.class);
         
         List<List<String>> listaSolicitudesFinales = new ArrayList<>();
         List<List<String>>  listaSolicitudesRechazadasFinales = new ArrayList<>(); 
         
-        for (int i = 0; i < listaSolicitudes.size(); i++) {
-            Solicitud aux = listaSolicitudes.get(i);
+        PriorityQueue<Solicitud> pq = new PriorityQueue<>(Comparator.comparing(Solicitud::getNombre));
+        
+        for (Solicitud solicitud : listaSolicitudes) {
+            if (listaSolicitudesEmbargo.contains(solicitud.getNombre())) {
+                pq.offer(solicitud); 
+            } else {
+                pq.offer(solicitud); 
+        }
+        }
+        
+            while (!pq.isEmpty()) {
+        
+            Solicitud aux = pq.poll();
+            
             if((aux.isEnListaNegra() && aux.getFechaIngresoListaNegra().isBefore(LocalDate.now().minusDays(180))) || aux.isPrePensionado()){
                 listaSolicitudesRechazadasFinales.add(aux.toStringList());
             }
@@ -104,8 +121,8 @@ public class ProcesadorCsv {
                         }
             } 
             listaSolicitudesFinales.add(aux.toStringList());
-            
-        } 
+        
+        }
         
         
         try {
