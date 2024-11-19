@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
-import models.Persona;
 import models.Solicitud;
 
 public class ProcesadorCsv {
@@ -25,12 +29,44 @@ public class ProcesadorCsv {
     }
 
     public void processSingleCsvFile(Path csvFile) {
+
+        List<String> cabecera = Arrays.asList(
+                "idSolicitud",
+                "idCotizante",
+                "fechaCreacion",
+                "fechaUltimaActualizacion",
+                "estado",
+                "nombre",
+                "fondoOrigen",
+                "fondoDestino",
+                "sexo",
+                "fechaNacimiento",
+                "ciudadNacimiento",
+                "ciudadResidencia",
+                "institucionPublica",
+                "prePensionado",
+                "condecoracion",
+                "numHijos",
+                "verificadoPorProcuraduria",
+                "verificadoPorFiscalia",
+                "verificadoPorContraloria",
+                "enListaNegrafechaIngreso",
+                "ListaNegra",
+                "observacionDisciplinaria",
+                "tieneFamiliaEnPolicia",
+                "semanasCotizadas"
+        );
+        
         List<Solicitud> listaSolicitudes = em.cargarDesdeCSV(csvFile.toString(), Solicitud.class);
         List<Solicitud> listaSolicitudesRechazadas = em.cargarDesdeCSV(csvFile.toString(), Solicitud.class);
+        
+        List<List<String>> listaSolicitudesFinales = new ArrayList<>();
+        List<List<String>>  listaSolicitudesRechazadasFinales = new ArrayList<>(); 
+        
         for (int i = 0; i < listaSolicitudes.size(); i++) {
             Solicitud aux = listaSolicitudes.get(i);
             if((aux.isEnListaNegra() && aux.getFechaIngresoListaNegra().isBefore(LocalDate.now().minusDays(180))) || aux.isPrePensionado()){
-                listaSolicitudesRechazadas.add(aux);
+                listaSolicitudesRechazadasFinales.add(aux.toStringList());
             }
             
             if(!(aux.getInstitucionPublica().equals("Armada") || aux.getInstitucionPublica().equals("Inpec") || 
@@ -42,13 +78,15 @@ public class ProcesadorCsv {
                     (aux.getCiudadNacimiento().endsWith("tán"))){
                 }else{
                     if((aux.getSexo() && aux.getFechaNacimiento().getYear() < 1962) || (!aux.getSexo() && aux.getFechaNacimiento().getYear() < 1967)){
-                        listaSolicitudesRechazadas.add(aux);
+                        listaSolicitudesRechazadasFinales.add(aux.toStringList());
+                        break;
                     }else{
                         if((aux.getFondoOrigen().equals("Porvenir") && aux.getSemanasCotizadas() > 800)  ||
                                 (aux.getFondoOrigen().equals("Protección") && aux.getSemanasCotizadas() > 590) ||
                                 (aux.getFondoOrigen().equals("Colfondos") && aux.getSemanasCotizadas() > 300) ||
                                 (aux.getFondoOrigen().equals("Old Mutual") && aux.getSemanasCotizadas() > 100) ){
-                            listaSolicitudesRechazadas.add(aux);
+                            listaSolicitudesRechazadasFinales.add(aux.toStringList());
+                            break;
                         }
                     }
                 }
@@ -61,13 +99,21 @@ public class ProcesadorCsv {
                         (aux.getInstitucionPublica().equals("MinInterior")) && aux.isObservacionDisciplinaria())){
                         aux.setFechaIngresoListaNegra(LocalDate.now());
                         aux.setEnListaNegra(true);
-                        listaSolicitudesRechazadas.add(aux);
+                        listaSolicitudesRechazadasFinales.add(aux.toStringList());
+                        break;
                         }
             } 
+            listaSolicitudesFinales.add(aux.toStringList());
+            
         } 
         
-        System.out.println(listaSolicitudes);
-        System.out.println(listaSolicitudesRechazadas);
+        
+        try {
+            em.createCSV("resources/SolicitudesRechazadas/solcitudes_r.csv", cabecera, listaSolicitudesRechazadasFinales);
+            em.createCSV("resources/SolicitudesProcesadas/solcitudes_p.csv", cabecera, listaSolicitudesFinales);
+        } catch (IOException ex) {
+            Logger.getLogger(ProcesadorCsv.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
    

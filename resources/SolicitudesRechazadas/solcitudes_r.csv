@@ -1,0 +1,2 @@
+idSolicitud,idCotizante,fechaCreacion,fechaUltimaActualizacion,estado,nombre,fondoOrigen,fondoDestino,sexo,fechaNacimiento,ciudadNacimiento,ciudadResidencia,institucionPublica,prePensionado,condecoracion,numHijos,verificadoPorProcuraduria,verificadoPorFiscalia,verificadoPorContraloria,enListaNegrafechaIngreso,ListaNegra,observacionDisciplinaria,tieneFamiliaEnPolicia,semanasCotizadas
+1,2024-01-10,2024-01-20,En Proceso,COT001,Juan Pérez,Porvenir,Protección,false,1965-05-01,Bogotá,Medellín,Policía,false,false,2,false,false,false,false,null,false,1100,0
