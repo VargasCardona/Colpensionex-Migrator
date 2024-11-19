@@ -1,16 +1,18 @@
 package models;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 public class Solicitud {
     private int idSolicitud; 
+    private String idCotizante;
     private LocalDate fechaCreacion; 
     private LocalDate fechaUltimaActualizacion; 
     private String estado; 
 
 
     // parte del cotizante
-    private String idCotizante;
     private String nombre;
     private String fondoOrigen;
     private String fondoDestino;
@@ -298,4 +300,33 @@ public class Solicitud {
                 '}';
     }
     
+    public List<String> toStringList() {
+        return Arrays.asList(
+        String.valueOf(idSolicitud), 
+        fechaCreacion.toString(), 
+        fechaUltimaActualizacion.toString(), 
+        estado, 
+        String.valueOf(idCotizante), 
+        nombre, 
+        fondoOrigen, 
+        fondoDestino, 
+        String.valueOf(sexo), 
+        fechaNacimiento.toString(), 
+        ciudadNacimiento,
+        ciudadResidencia, 
+        institucionPublica, 
+        String.valueOf(prePensionado), 
+        String.valueOf(condecoracion), 
+        String.valueOf(numHijos), 
+        String.valueOf(verificadoPorProcuraduria), 
+        String.valueOf(verificadoPorFiscalia), 
+        String.valueOf(verificadoPorContraloria), 
+        String.valueOf(enListaNegra), 
+        fechaIngresoListaNegra != null ? fechaIngresoListaNegra.toString() : "null", 
+        String.valueOf(observacionDisciplinaria), 
+        String.valueOf(tieneFamiliaEnPolicia), 
+        String.valueOf(semanasCotizadas)
+    );
+    
+}
 }
